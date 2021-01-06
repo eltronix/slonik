@@ -207,7 +207,7 @@ const getFooIdByBar = (connection: DatabaseConnectionType, bar: string): Promise
 
 This becomes particularly important when writing routines where multiple queries depend on the previous result. Using methods with inbuilt assertions ensures that in case of an error, the error points to the original source of the problem. In contrast, unless assertions for all possible outcomes are typed out as in the previous example, the unexpected result of the query will be fed to the next operation. If you are lucky, the next operation will simply break; if you are unlucky, you are risking data corruption and hard to locate bugs.
 
-Furthermore, using methods that guarantee the shape of the results, allows us to leverage static type checking and catch some of the errors even before they executing the code, e.g.
+Furthermore, using methods that guarantee the shape of the results, allows us to leverage static type checking and catch some of the errors even before executing the code, e.g.
 
 ```js
 const fooId = await connection.many(sql`
